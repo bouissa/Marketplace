@@ -3,19 +3,6 @@ Plateforme complète de marketplace multi-vendeurs développée avec **Oracle Da
 
 ---
 
-## 📋 Table des Matières
-- 🚀 Aperçu du Projet  
-- ✨ Fonctionnalités  
-- 📊 Modélisation  
-- 🗄️ Structure de la Base de Données  
-- 🔧 Installation  
-- 📖 Utilisation  
-- 📚 Documentation  
-- 👥 Auteurs  
-- 📄 Licence  
-
----
-
 ## 🚀 Aperçu du Projet
 
 Ce projet consiste à concevoir et développer une **marketplace e-commerce multi-vendeurs** en utilisant :
