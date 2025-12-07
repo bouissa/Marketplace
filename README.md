@@ -1,191 +1,127 @@
-🛒 Marketplace E-Commerce Multi-Vendeurs
+# 🛒 Marketplace E-Commerce Multi-Vendeurs  
+Plateforme complète de marketplace multi-vendeurs développée avec **Oracle Database**, **PL/SQL** et **Oracle APEX**.
 
-Développé avec Oracle Database, PL/SQL et Oracle APEX
+---
 
-📚 Table des Matières
+## 📋 Table des Matières
+- 🚀 Aperçu du Projet  
+- ✨ Fonctionnalités  
+- 📊 Modélisation  
+- 🗄️ Structure de la Base de Données  
+- 🔧 Installation  
+- 📖 Utilisation  
+- 📚 Documentation  
+- 👥 Auteurs  
+- 📄 Licence  
 
-🚀 Aperçu du Projet
+---
 
-✨ Fonctionnalités
+## 🚀 Aperçu du Projet
 
-📊 Modélisation
+Ce projet consiste à concevoir et développer une **marketplace e-commerce multi-vendeurs** en utilisant :
 
-🗄️ Structure de la Base de Données
+- Oracle Database  
+- PL/SQL  
+- Oracle APEX  
 
-🔧 Installation
+Objectifs principaux :
 
-📖 Utilisation
+- 🎯 Maîtriser la modélisation **MERISE**  
+- 🗄️ Implémenter une base Oracle relationnelle  
+- 🧠 Développer la logique métier complète en PL/SQL  
+- 🖥️ Créer une interface web avec Oracle APEX  
+- 🧩 Appliquer les bonnes pratiques de modélisation et de développement  
 
-📘 Documentation
+---
 
-👥 Auteurs
+## ✨ Fonctionnalités
 
-📄 Licence
+### 👤 Pour les Clients
+- ✅ Inscription & authentification  
+- ✅ Consultation du catalogue produits  
+- ✅ Recherche avancée  
+- ✅ Gestion du profil  
+- ✅ Ajout au panier  
+- ✅ Passage de commande  
+- ✅ Paiement en ligne  
+- ✅ Suivi des commandes & expédition  
+- ✅ Dépôt d'avis  
+- ✅ Demande de remboursement  
 
-🚀 Aperçu du Projet
+### 🏪 Pour les Vendeurs
+- ✅ Gestion de la boutique  
+- ✅ CRUD complet sur les produits  
+- ✅ Gestion des stocks  
+- ✅ Consultation du chiffre d'affaires  
+- ✅ Application des coupons  
+- ✅ Gestion des statuts de commande  
+- ✅ Supervision des ventes  
+- ✅ Gestion des transactions  
 
-Cette plateforme e-commerce multi-vendeurs a été développée dans un contexte académique pour mettre en pratique :
+### 🛡️ Pour les Administrateurs
+- ✅ Gestion des utilisateurs (CRUD)  
+- ✅ Gestion des catégories  
+- ✅ Journalisation des actions sensibles  
+- ✅ Consultation des logs système  
 
-Modélisation MERISE
+---
 
-Développement PL/SQL
+## 📊 Modélisation
 
-Réalisation d’interfaces avec Oracle APEX
-
-Bonnes pratiques de développement d’applications complètes
-
-🎯 Objectif principal : Concevoir une marketplace fonctionnelle permettant aux vendeurs de gérer leurs produits, aux clients d’acheter, et aux administrateurs de superviser l’ensemble du système.
-
-✨ Fonctionnalités
-👤 Pour les Clients
-
-✅ Inscription & Authentification
-
-✅ Consultation du Catalogue
-
-✅ Recherche de Produits
-
-✅ Gestion du Profil
-
-✅ Panier d’Achat
-
-✅ Passation de Commande
-
-✅ Paiement en Ligne
-
-✅ Suivi des Commandes & Expéditions
-
-✅ Dépôt d’Avis
-
-✅ Demande de Remboursement
-
-🛍️ Pour les Vendeurs
-
-✅ Gestion de la Boutique
-
-✅ CRUD Produits
-
-✅ Gestion des Stocks
-
-✅ Suivi Chiffre d’Affaires
-
-✅ Application de Coupons
-
-✅ Gestion des Commandes
-
-✅ Supervision des Ventes
-
-✅ Gestion des Transactions
-
-🛠️ Pour les Administrateurs
-
-✅ Gestion des Utilisateurs (CRUD)
-
-✅ Gestion des Catégories
-
-✅ Journalisation des Actions Sensibles
-
-✅ Consultation des Logs Système
-
-📊 Modélisation
-🧩 Modèle Conceptuel (MERISE)
+### 📘 Modèle Conceptuel de Données (MCD)
 
 Entités principales :
 
-Vendeur
+- **Vendeur** : gère les produits et la boutique  
+- **Client** : passe des commandes et donne des avis  
+- **Produit** : appartient à une catégorie et proposé par un vendeur  
+- **Commande** : ensemble de lignes produits  
+- **Ligne_Commande** : produit + quantité  
+- **Paiement** : transaction associée à une commande  
+- **Expédition** : livraison d’une commande  
+- **Avis** : évaluation d’un produit  
+- **Coupon** : réduction appliquée aux commandes  
+- **Log_Actions** : journal d’audit  
 
-Client
+### 🧠 Règles de Gestion
+- Décrémentation automatique du stock  
+- Workflow des statuts : **Pending → Paid → Shipped**  
+- Vérification du stock avant commande  
+- Application automatique des coupons  
+- Journalisation complète des actions critiques  
 
-Produit
+---
 
-Commande
+## 🗄️ Structure de la Base de Données
 
-Ligne_Commande
+### 📦 Tables Principales
+- `CATEGORIE`  
+- `VENDEUR`  
+- `CLIENT`  
+- `COUPON`  
+- `PRODUIT`  
+- `COMMANDE`  
+- `LIGNE_COMMANDE`  
+- `PAIEMENT`  
+- `EXPEDITION`  
+- `AVIS`  
+- `LOG_ACTIONS`  
 
-Paiement
+### 🔗 Relations Clés
+- 1 vendeur → N produits  
+- 1 catégorie → N produits  
+- 1 client → N commandes  
+- 1 commande → N lignes  
+- 1 ligne → 1 produit  
+- 1 commande → 1 paiement  
+- 1 commande → 1 expédition  
+- 1 produit → N avis  
 
-Expédition
+---
 
-Avis
+## 🔧 Installation
 
-Coupon
-
-Log_Actions
-
-🔐 Règles de Gestion
-
-Gestion automatique des stocks
-
-Workflow commandes : Pending → Paid → Shipped
-
-Validation des statuts
-
-Contrôle des stocks avant commande
-
-Application automatique des coupons
-
-Journalisation des opérations
-
-🗄️ Structure de la Base de Données
-📌 Tables Principales
-
-CATEGORIE
-
-VENDEUR
-
-CLIENT
-
-COUPON
-
-PRODUIT
-
-COMMANDE
-
-LIGNE_COMMANDE
-
-PAIEMENT
-
-EXPEDITION
-
-AVIS
-
-LOG_ACTIONS
-
-🔗 Relations
-
-1 vendeur → N produits
-
-1 catégorie → N produits
-
-1 client → N commandes
-
-1 commande → N lignes
-
-1 ligne → 1 produit
-
-1 commande → 1 paiement
-
-1 commande → 1 expédition
-
-1 client → N avis
-
-🔧 Installation
-📋 Prérequis
-
-Oracle Database 21c XE+
-
-Oracle SQL Developer
-
-Oracle APEX 22.2+
-
-🛠️ Étapes d’installation
-1️⃣ Cloner le dépôt
-git clone https://github.com/votre-username/marketplace-ecommerce.git
-cd marketplace-ecommerce
-
-Université Cadi Ayyad – FSSM
-Département Informatique – 2024/2025
-
-📄 Licence
-
-Projet réalisé dans un cadre académique.
+### 📌 Prérequis
+- Oracle Database **21c XE** ou supérieur  
+- Oracle SQL Developer  
+- Oracle APEX **22.2+**  
